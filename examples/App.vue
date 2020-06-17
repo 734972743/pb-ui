@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-12 17:50:29
- * @LastEditTime: 2020-06-18 03:06:05
+ * @LastEditTime: 2020-06-18 03:48:29
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \home\vue_ui\src\App.vue
@@ -24,8 +24,6 @@
 
 
 <script>
-// 引入全局的js;
-
 export default {
   data() {
     return {
