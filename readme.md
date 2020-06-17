@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-15 11:37:19
- * @LastEditTime: 2020-06-18 03:12:08
+ * @LastEditTime: 2020-06-18 03:43:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \home\pb-ui\readme.md
@@ -28,8 +28,10 @@ npm install element-ui echarts pb-ui -S
 
 ```js
 import Vue from "vue";
-import PbUi from "pb-ui";
 import App from "./App.vue";
+
+import PbUi from "pb-ui";
+import "pb-ui/dist/pb-ui.css";
 
 Vue.use(PbUi);
 
