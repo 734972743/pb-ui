@@ -4,7 +4,7 @@
   "private": false,
   "license": "MIT",
   "author": "pb",
-  "main": "dist/index.cb1a2385.js",
+  "main": "dist/pb-ui.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

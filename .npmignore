@@ -1,0 +1,13 @@
+# npm 忽略的目录
+
+examples/
+node_modules/
+packages/
+public/
+
+
+#npm 忽略的配置文件
+
+vue.config.js
+babel.config.js
+*.map
