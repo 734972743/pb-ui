@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-15 11:37:19
- * @LastEditTime: 2020-06-18 02:31:24
+ * @LastEditTime: 2020-06-18 03:12:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \home\pb-ui\readme.md
@@ -22,9 +22,9 @@ https://github.com/734972743/pb-ui
 
 ## 安装
 
-npm install pb-ui -S
+npm install element-ui echarts pb-ui -S
 
-### 在 main.js 文件中
+### 在 main.js 文件中进行配置
 
 ```js
 import Vue from "vue";
