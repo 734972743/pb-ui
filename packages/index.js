@@ -1,16 +1,19 @@
 /*
  * @Author: your name
  * @Date: 2020-06-18 01:13:11
- * @LastEditTime: 2020-06-18 01:28:14
+ * @LastEditTime: 2020-06-18 03:08:30
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \home\pb-ui\packages\index.js
  */
 
+import echarts from "echarts";
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
+
 import PbBar from "./components/Echarts/bar.vue";
 import PbLine from "./components/Echarts/line.vue";
 import PbPie from "./components/Echarts/pie.vue";
-import echarts from "echarts";
 
 import Search from "./components/Search";
 import DatePicker from "./components/DatePicker";
@@ -39,7 +42,11 @@ const install = function(Vue) {
     },
   });
 
+  // 引入组件
   Vue.use(echarts);
+
+  Vue.use(ElementUI);
+
   //注册组件
   Vue.component("pb-demo-block", DemoBlock);
   Vue.component("pb-bar", PbBar);
