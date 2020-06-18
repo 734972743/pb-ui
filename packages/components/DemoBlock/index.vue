@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-14 18:36:01
- * @LastEditTime: 2020-06-19 04:06:37
+ * @LastEditTime: 2020-06-19 04:49:27
  * @LastEditors: Please set LastEditors
  * @Description: 这个组件是用来 放置各个组件并给用户展示说明各个组件的使用及用途的
  * @FilePath: \home\vue_ui\src\components\DemoBlock\index.vue
@@ -29,7 +29,7 @@
 
     <!-- 用来控制说明是否展示用的 -->
     <div class="demo-block-control">
-      <i class="el-icon-caret-bottom"></i>
+      <i class="el-icon-caret-bottom caret-bottom"></i>
       <span style="display: none;" class="showCodeBtn">显示代码</span>
       <!-- <button
         type="button"
@@ -67,7 +67,7 @@ export default {
       ];
       let showCodeBtn = document.querySelectorAll(".showCodeBtn")[i];
       // let controlButton = document.querySelector(".control-button");
-      let iconBtn = document.querySelectorAll(`.el-icon-caret-bottom`)[i];
+      let iconBtn = document.querySelectorAll(".caret-bottom")[i];
       let code = document.querySelectorAll(".code")[i];
       let description = document.querySelectorAll(".description")[i];
       demoBlockControl.onmouseover = function() {
@@ -88,12 +88,12 @@ export default {
         if (!isShowMap.get(i + "")) {
           code.style.display = "block";
           description.style.display = "block";
-          iconBtn.className = "el-icon-caret-top";
+          iconBtn.className = "el-icon-caret-top caret-bottom";
           showCodeBtn.innerHTML = "隐藏代码";
         } else {
           code.style.display = "none";
           description.style.display = "none";
-          iconBtn.className = "el-icon-caret-bottom";
+          iconBtn.className = "el-icon-caret-bottom caret-bottom";
           showCodeBtn.innerHTML = "显示代码";
         }
         isShowMap.set(i + "", !isShowMap.get(i + "")); //取反
@@ -119,7 +119,7 @@ export default {
   /* margin: 20px auto; */
 }
 
-.demo-block-control .el-icon-caret-bottom {
+.demo-block-control .caret-bottom {
   margin-left: 311px;
 }
 

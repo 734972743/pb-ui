@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-14 22:52:05
- * @LastEditTime: 2020-06-19 03:36:04
+ * @LastEditTime: 2020-06-19 04:33:29
  * @LastEditors: Please set LastEditors
  * @Description: 用来输出组件提示说明文本的
  * @FilePath: \home\vue_ui\src\data\componentCodeData.js
@@ -91,6 +91,29 @@ export default {
       "       this.searchVal = val; ◐" +
       "     }; ◐" +
       "   } ◐" +
+      "</script> ◐";
+
+    return commonUtils.formatHtmlToText(str);
+  },
+
+  /** 柱状图控件的提示文字 */
+  getEchartBarHtml() {
+    let str =
+      "<template> ◐" +
+      '<pb-bar :refId="ref1" :options="options"></pb-bar> ◐' +
+      "</template> ◐" +
+      " ◐" +
+      "<script> ◐" +
+      "   data() { ◐" +
+      "     return { ◐" +
+      '      ref1: "echart1" ◐' +
+      "       options: { ◐" +
+      '       title: "财政收入支出图", ◐' +
+      '       xData: ["2020-01", "2020-02", "2020-03", "2020-04"], ◐' +
+      "       series: [100, 200, 150, 300], ◐" +
+      "        } ◐" +
+      "     }; ◐" +
+      "    } ◐" +
       "</script> ◐";
 
     return commonUtils.formatHtmlToText(str);
