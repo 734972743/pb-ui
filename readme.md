@@ -6,8 +6,9 @@
  * @Description: In User Settings Edit
  * @FilePath: \home\pb-ui\readme.md
  -->
-
 <!-- 冲突解决了 -->
+<!-- 测试解决冲突 -->
+
 <!-- npm config set registry http://registry.npmjs.org/ 官方镜像
 npm config set registry https://registry.npm.taobao.org 淘宝镜像
 
