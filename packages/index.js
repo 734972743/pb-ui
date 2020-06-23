@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-18 01:13:11
- * @LastEditTime: 2020-06-18 03:08:30
+ * @LastEditTime: 2020-06-24 04:42:24
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \home\pb-ui\packages\index.js
@@ -19,6 +19,8 @@ import Search from "./components/Search";
 import DatePicker from "./components/DatePicker";
 import Tree from "./components/Tree";
 import DemoBlock from "./components/DemoBlock";
+import Timer from "./components/Timer";
+import Lyric from "./components/Lyric";
 
 const install = function(Vue) {
   Vue.mixin({
@@ -55,6 +57,8 @@ const install = function(Vue) {
   Vue.component("pb-search", Search);
   Vue.component("pb-datepicker", DatePicker);
   Vue.component("pb-tree", Tree);
+  Vue.component("pb-timer", Timer);
+  Vue.component("pb-lyric", Lyric);
 };
 
 //判断是否是直接引入文件，不过是，就不要直接调用Vue.use();

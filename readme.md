@@ -12,6 +12,13 @@
 <!-- npm config set registry http://registry.npmjs.org/ 官方镜像
 npm config set registry https://registry.npm.taobao.org 淘宝镜像
 
+
+<!--   
+  自己私人git服务器 地址
+  git clone  git@http://49.233.162.66:/home/git/pb-ui.git 
+ 
+-->
+
 ### npm version patch : 提升一个版本 -->
 
 # <center>pb-ui 组件 </center>
