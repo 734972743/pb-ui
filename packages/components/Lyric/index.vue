@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-24 04:20:47
- * @LastEditTime: 2020-06-24 05:15:55
+ * @LastEditTime: 2020-06-24 05:51:43
  * @LastEditors: Please set LastEditors
  * @Description: 这个是歌词组件
  * @FilePath: \home\pb-ui\packages\components\Lyric\index.vue
@@ -58,6 +58,12 @@ export default {
     start: {
       type: Boolean,
       default: true
+    },
+
+    //是否歌词跟随
+    isCyricFollow: {
+      type: String,
+      default: "1"
     }
   },
 
@@ -69,7 +75,6 @@ export default {
   data() {
     return {
       currentTime: 0,
-      isCyricFollow: "1",
       cyricObj: null //歌词对象
     };
   },

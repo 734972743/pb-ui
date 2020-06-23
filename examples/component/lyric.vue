@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-24 04:41:30
- * @LastEditTime: 2020-06-24 05:18:03
+ * @LastEditTime: 2020-06-24 05:53:42
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \home\pb-ui\examples\component\lyric.vue
@@ -14,6 +14,7 @@
 export default {
   data() {
     return {
+      isCyricFollow: "1",
       start: true, //歌词是否开始播放
       //   cyricContent：歌词
       cyricContent: `王力宏-缘分一道桥LRC歌词

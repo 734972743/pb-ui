@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-24 02:28:19
- * @LastEditTime: 2020-06-24 04:17:05
+ * @LastEditTime: 2020-06-24 05:49:37
  * @LastEditors: Please set LastEditors
  * @Description: 定时器组件
  * @FilePath: \home\pb-ui\packages\components\Timer\index.vue
@@ -105,7 +105,7 @@ export default {
           this.clockDate = null;
           break;
         case "10":
-          date.setSeconds(10);
+          date.setMinutes(10);
           //   date.setMinutes(10);
           break;
         case "20":

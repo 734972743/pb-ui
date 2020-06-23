@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-12 17:50:29
- * @LastEditTime: 2020-06-24 04:45:04
+ * @LastEditTime: 2020-06-24 05:54:15
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \home\vue_ui\src\App.vue
@@ -12,8 +12,8 @@
     <!-- <router-view></router-view> -->
     <!-- hello -->
     <!-- <echarts></echarts> -->
-    <!-- <timer></timer> -->
-    <lyric></lyric>
+    <timer></timer>
+    <!-- <lyric></lyric> -->
   </div>
 </template>
 
