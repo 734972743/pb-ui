@@ -1,14 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-24 04:41:30
- * @LastEditTime: 2020-06-25 15:56:33
+ * @LastEditTime: 2020-06-25 17:11:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \home\pb-ui\examples\component\lyric.vue
 --> 
 <template>
   <div>
-    <pb-lyric :cyricContent="cyricContent" :start="start" class="lyricFathon"></pb-lyric>
+    <pb-lyric :cyricContent="cyricContent" :start="start" :currentTime="currentTime" class="lyricFathon"></pb-lyric>
     <button @click="changeCyric">修改歌词</button>
   </div>
 </template>
@@ -19,6 +19,7 @@ export default {
     return {
       isCyricFollow: "1",
       start: true, //歌词是否开始播放
+      currentTime: 0, //歌词当前的时间
       //   cyricContent：歌词
       cyricContent: `王力宏-缘分一道桥LRC歌词
 更新时间：2020-06-04
@@ -111,7 +112,6 @@ export default {
 
   methods: {
     changeCyric() {
-      /*
       this.cyricContent = `[ar:郭德纲]
 
 [ti:十三香 (Live)]
@@ -149,9 +149,9 @@ export default {
 [00:41.92]才知道用了我的十三香
 
 `;
-*/
 
-      this.cyricContent = "";
+      // this.cyricContent = "";
+      this.currentTime = 30;
     }
   }
 };

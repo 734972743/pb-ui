@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-24 04:20:47
- * @LastEditTime: 2020-06-25 16:06:57
+ * @LastEditTime: 2020-06-25 17:06:23
  * @LastEditors: Please set LastEditors
  * @Description: 这个是歌词组件
  * @FilePath: \home\pb-ui\packages\components\Lyric\index.vue
@@ -9,7 +9,7 @@
 <template>
   <div class="lyric">
     <!-- 这个标签只是为了刷新页面而已 -->
-    <div style="display:none;">{{ currentTime }}</div>
+    <div style="display:none;">{{ currentTimeSon }}</div>
     <div class="lyricTip">
       <a href="#isSelect" id="tiaozhuang" style="display:none;"></a>
       <!-- 歌词 -->
@@ -64,6 +64,11 @@ export default {
     isCyricFollow: {
       type: String,
       default: "1"
+    },
+
+    currentTime: {
+      type: Number,
+      default: 0
     }
   },
 
@@ -74,7 +79,7 @@ export default {
 
   data() {
     return {
-      currentTime: 0,
+      currentTimeSon: 0,
       cyricObj: null, //歌词对象
       isCyricFollowSon: this.isCyricFollow
     };
@@ -88,7 +93,7 @@ export default {
     showLyric() {
       times = setInterval(() => {
         if (this.start) {
-          this.currentTime++;
+          this.currentTimeSon++;
         }
 
         let ms = this.cyricObj.ms;
@@ -102,7 +107,7 @@ export default {
             se2 = parseInt(this.timeFormatToSecond(ms[i + 1].t));
           }
 
-          if (this.currentTime >= se1 && this.currentTime < se2) {
+          if (this.currentTimeSon >= se1 && this.currentTimeSon < se2) {
             ms[i].isSelect = true; //被选中
           } else {
             ms[i].isSelect = false;
@@ -132,7 +137,7 @@ export default {
      * 初始化歌词对象
      */
     initCyric() {
-      this.currentTime = 0;
+      this.currentTimeSon = 0;
       //去掉上一个歌词计时器
 
       var oLRC = {
@@ -231,6 +236,10 @@ export default {
 
     isCyricFollow(newVal, oldVal) {
       this.isCyricFollowSon = newVal;
+    },
+
+    currentTime(newVal, oldVal) {
+      this.currentTimeSon = newVal;
     }
   }
 };
