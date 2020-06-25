@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-24 04:20:47
- * @LastEditTime: 2020-06-25 15:07:17
+ * @LastEditTime: 2020-06-25 16:06:57
  * @LastEditors: Please set LastEditors
  * @Description: 这个是歌词组件
  * @FilePath: \home\pb-ui\packages\components\Lyric\index.vue
@@ -15,8 +15,8 @@
       <!-- 歌词 -->
       是否歌词跟随
       <span class="isCyricFollow">
-        <el-radio v-model="isCyricFollow" label="1">是</el-radio>
-        <el-radio v-model="isCyricFollow" label="0">否</el-radio>
+        <el-radio v-model="isCyricFollowSon" label="1">是</el-radio>
+        <el-radio v-model="isCyricFollowSon" label="0">否</el-radio>
       </span>
     </div>
 
@@ -57,7 +57,7 @@ export default {
     //歌词是否开始播放
     start: {
       type: Boolean,
-      default: true
+      default: false
     },
 
     //是否歌词跟随
@@ -75,7 +75,8 @@ export default {
   data() {
     return {
       currentTime: 0,
-      cyricObj: null //歌词对象
+      cyricObj: null, //歌词对象
+      isCyricFollowSon: this.isCyricFollow
     };
   },
 
@@ -85,7 +86,7 @@ export default {
      *
      */
     showLyric() {
-      let times = setInterval(() => {
+      times = setInterval(() => {
         if (this.start) {
           this.currentTime++;
         }
@@ -108,14 +109,14 @@ export default {
           }
         }
         this.cyricObj.ms = ms;
-        if (this.isCyricFollow == "1") {
+        if (this.isCyricFollowSon == "1") {
           tiaozhuang.click(); //模拟使用a标签点击跳转
         }
       }, 1000);
 
       //显示歌词
       this.initCyric();
-      if (this.cyricContent) {
+      if (this.cyricContent && this.cyricContent != "") {
         this.cyricObj = this.parseCyric(this.cyricContent);
       } else {
         this.cyricObj = {};
@@ -131,6 +132,9 @@ export default {
      * 初始化歌词对象
      */
     initCyric() {
+      this.currentTime = 0;
+      //去掉上一个歌词计时器
+
       var oLRC = {
         ti: "", //歌曲名
         ar: "", //演唱者
@@ -219,7 +223,14 @@ export default {
   watch: {
     //当歌词变化时，就主动修改歌词显示
     cyricContent(newVal, oldVal) {
+      if (times) {
+        window.clearInterval(times);
+      }
       this.showLyric();
+    },
+
+    isCyricFollow(newVal, oldVal) {
+      this.isCyricFollowSon = newVal;
     }
   }
 };

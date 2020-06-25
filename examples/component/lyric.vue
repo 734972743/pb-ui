@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-24 04:41:30
- * @LastEditTime: 2020-06-25 15:31:49
+ * @LastEditTime: 2020-06-25 15:56:33
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \home\pb-ui\examples\component\lyric.vue
@@ -111,6 +111,7 @@ export default {
 
   methods: {
     changeCyric() {
+      /*
       this.cyricContent = `[ar:郭德纲]
 
 [ti:十三香 (Live)]
@@ -148,6 +149,9 @@ export default {
 [00:41.92]才知道用了我的十三香
 
 `;
+*/
+
+      this.cyricContent = "";
     }
   }
 };
