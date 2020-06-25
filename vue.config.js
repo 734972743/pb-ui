@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-10-13 14:21:54
- * @LastEditTime: 2020-06-18 01:57:12
+ * @LastEditTime: 2020-06-26 02:02:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \home\pb-music\vue.config.js
@@ -53,6 +53,18 @@ module.exports = {
 
   //   modules: false, //是否启动 css modules for all css
   // },
+
+  //配置jquery
+
+  configureWebpack: {
+    plugins: [
+      new Webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "windows.jQuery": "jquery",
+      }),
+    ],
+  },
 
   //扩展webpack 配置 ，让packages加入编译
   chainWebpack: (config) => {

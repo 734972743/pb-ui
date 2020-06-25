@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-24 04:20:47
- * @LastEditTime: 2020-06-25 17:06:23
+ * @LastEditTime: 2020-06-26 02:45:05
  * @LastEditors: Please set LastEditors
  * @Description: 这个是歌词组件
  * @FilePath: \home\pb-ui\packages\components\Lyric\index.vue
@@ -69,6 +69,12 @@ export default {
     currentTime: {
       type: Number,
       default: 0
+    },
+
+    maxTime: {
+      type: Number,
+      required: true,
+      default: 1
     }
   },
 
@@ -79,7 +85,7 @@ export default {
 
   data() {
     return {
-      currentTimeSon: 0,
+      currentTimeSon: this.currentTime,
       cyricObj: null, //歌词对象
       isCyricFollowSon: this.isCyricFollow
     };
@@ -91,9 +97,29 @@ export default {
      *
      */
     showLyric() {
+      let $cyricContent = $(".cyricContent");
+      // let $height = $cyricContent.height();
+
       times = setInterval(() => {
         if (this.start) {
           this.currentTimeSon++;
+        }
+
+        if (this.isCyricFollowSon == "1") {
+          // tiaozhuang.click(); //模拟使用a标签点击跳转
+          let top = 2612 * (this.currentTimeSon / this.maxTime);
+
+          if (top < 500) {
+            top -= 100;
+          } else if (top < 1000) {
+            top -= 70;
+          } else if (top < 1500) {
+            top += 50;
+          } else if (top > 1500) {
+            top + 100;
+          }
+          // console.log("top: ", top);
+          $cyricContent.scrollTop(top);
         }
 
         let ms = this.cyricObj.ms;
@@ -114,9 +140,6 @@ export default {
           }
         }
         this.cyricObj.ms = ms;
-        if (this.isCyricFollowSon == "1") {
-          tiaozhuang.click(); //模拟使用a标签点击跳转
-        }
       }, 1000);
 
       //显示歌词
