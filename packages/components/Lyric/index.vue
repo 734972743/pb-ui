@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-24 04:20:47
- * @LastEditTime: 2020-06-24 05:51:43
+ * @LastEditTime: 2020-06-25 15:07:17
  * @LastEditors: Please set LastEditors
  * @Description: 这个是歌词组件
  * @FilePath: \home\pb-ui\packages\components\Lyric\index.vue
@@ -213,6 +213,13 @@ export default {
         second = parseInt(timeStrArr[0]);
       }
       return second;
+    }
+  },
+
+  watch: {
+    //当歌词变化时，就主动修改歌词显示
+    cyricContent(newVal, oldVal) {
+      this.showLyric();
     }
   }
 };

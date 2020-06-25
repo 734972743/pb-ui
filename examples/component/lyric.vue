@@ -1,13 +1,16 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-24 04:41:30
- * @LastEditTime: 2020-06-24 05:53:42
+ * @LastEditTime: 2020-06-25 15:31:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \home\pb-ui\examples\component\lyric.vue
 --> 
 <template>
-  <pb-lyric :cyricContent="cyricContent" :start="start" class="lyricFathon"></pb-lyric>
+  <div>
+    <pb-lyric :cyricContent="cyricContent" :start="start" class="lyricFathon"></pb-lyric>
+    <button @click="changeCyric">修改歌词</button>
+  </div>
 </template>
 
 <script>
@@ -104,6 +107,48 @@ export default {
 [03:57.88]
 [03:59.55]lrc歌词编辑：天龙 QQ：26092798`
     };
+  },
+
+  methods: {
+    changeCyric() {
+      this.cyricContent = `[ar:郭德纲]
+
+[ti:十三香 (Live)]
+
+[00:00.72]小的纸儿四四方方
+
+[00:04.39]东汉蔡伦造纸张
+
+[00:07.65]南京用它包绸缎
+
+[00:10.17]北京用它包文章
+
+[00:13.29]此纸落在我的手
+
+[00:15.73]张张包的都是十三香
+
+[00:18.63]夏天热冬天凉
+
+[00:21.45]冬夏离不了这十三香
+
+[00:24.23]亲朋好友来聚会
+
+[00:26.60]挽挽袖子就下厨房
+
+[00:29.53]煎炒烹炸味道美
+
+[00:31.63]鸡鸭鱼肉喷儿喷儿的香
+
+[00:34.46]赛过王母蟠桃宴
+
+[00:36.47]胜过老君的仙丹香
+
+[00:39.02]八洞的神仙来拜访
+
+[00:41.92]才知道用了我的十三香
+
+`;
+    }
   }
 };
 </script>
